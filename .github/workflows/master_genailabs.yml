@@ -57,3 +57,8 @@ jobs:
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4905A34A4B504B489D33A2691E04C4B9 }}
+
+      - name: 'Set Startup Command'
+        run: 'az webapp config set --resource-group business-lab-rg --name genailabs --startup-file "pm2 serve /home/site/wwwroot --no-daemon"'
+        env:
+          AZURE_WEBAPP_PUBLISHPROFILE: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4905A34A4B504B489D33A2691E04C4B9 }}
