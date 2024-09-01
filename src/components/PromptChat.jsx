@@ -148,7 +148,10 @@ const PromptChat = ({ labData }) => {
     setLoadingFiles(true);
     setFileLoadError(null);
     try {
-      const response = await axios.get('http://20.197.53.225:7071/api/get_files_list');
+      const response = await axios.get(
+        // 'http://20.197.53.225:7071/api/get_files_list',
+        'https://business-lab-function.azurewebsites.net/api/get_files_list?code=3ljnnHr99EWbjsmIEEbAvKoE7TGLYuSSXoUu3J9hZILPAzFubaIm_Q%3D%3D'
+      );
       setFilesList(response.data);
       setLoadingFiles(false);
     } catch (error) {
@@ -162,7 +165,8 @@ const PromptChat = ({ labData }) => {
   const getGeneratedContext = async (fileName) => {
     try {
       const response = await axios.get(
-        `http://20.197.53.225:7071/api/get_file_context?file=${fileName}`,
+        // `http://20.197.53.225:7071/api/get_file_context?file=${fileName}`,
+        `https://business-lab-function.azurewebsites.net/api/get_file_context?code=a7zI88sjG-uflCs_PtXcN-jWLjlQBoizpSN-XpRqPjPDAzFuPoBUaw%3D%3D&file=${fileName}`,
         JSON.stringify({ "file_name": fileName })
       );
       return `The data of file ${fileName} is: ${response.data} in an unstructured format.`;

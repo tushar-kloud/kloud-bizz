@@ -20,20 +20,18 @@ import { labsDetails } from "../constants";
 
 const LabScreen = () => {
   const { labId } = useParams();
-  const [labIndex, setLabIndex] = useState(null);
+  // const [labIndex, setLabIndex] = useState(null);
 
   const navigate = useNavigate();
 
   let labData = {};
 
-  labsDetails.map((lab, index) => {
+  labsDetails.map((lab,) => {
     if (lab.id == labId) {
       labData = lab;
       // setLabIndex(index)s
     }
   });
-
-  console.log("Lab Index:", labIndex);
 
   // Check if the lab exists
   if (!labData) {
