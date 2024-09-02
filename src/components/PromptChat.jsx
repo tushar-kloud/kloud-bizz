@@ -18,6 +18,7 @@ import {
   Divider,
   CircularProgress,
   Alert,
+  fabClasses,
 } from "@mui/material";
 import axios from "axios";
 import MessageBubble from "./MessageBubble";
@@ -32,6 +33,7 @@ const PromptChat = ({ labData }) => {
   const [conversationContext, setConversationContext] = useState([]);
   const [newFileContext, setNewFileContext] = useState(null);
   const [filesList, setFilesList] = useState([]);
+  const [allowFileUpload, setAllowFileUpload] = useState(labData.file_upload || false);
   const [loadingFiles, setLoadingFiles] = useState(false);
   const [fileLoadError, setFileLoadError] = useState(null);
   const [multipleFilesAllowed] = useState(labData.multiple_files || false);
@@ -272,7 +274,7 @@ const PromptChat = ({ labData }) => {
       >
         <IconButton
           onClick={handleAttachClick}
-          disabled={selectedFiles.length >= 2 && multipleFilesAllowed}
+          disabled={(selectedFiles.length >= 2 && multipleFilesAllowed) || !allowFileUpload}
           component="label"
           sx={{
             marginRight: "15px",
