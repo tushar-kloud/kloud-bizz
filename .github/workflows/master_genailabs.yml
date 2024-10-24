@@ -26,7 +26,9 @@ jobs:
         run: npm run build
         env:
             CI: false
+            VITE_GPT4O_API_URL: ${{secrets.VITE_GPT4O_API_URL}}
             VITE_GPT4O_API_KEY: ${{secrets.VITE_GPT4O_API_KEY}}
+            VITE_BUSINESS_BFA: ${{secrets.VITE_BUSINESS_BFA}}
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
