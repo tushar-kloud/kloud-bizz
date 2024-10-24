@@ -23,7 +23,9 @@ import {
 import axios from "axios";
 import MessageBubble from "./MessageBubble";
 
+const GPT4O_API_URL = import.meta.env.VITE_GPT4O_API_URL;
 const GPT4O_API_KEY = import.meta.env.VITE_GPT4O_API_KEY;
+const BUSINESS_BFA = import.meta.env.VITE_BUSINESS_BFA;
 
 const PromptChat = ({ labData }) => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -94,7 +96,8 @@ const PromptChat = ({ labData }) => {
 
       try {
         const response = await axios.post(
-          'https://abhishek-azure-ai-service001579560527.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview',
+          // 'https://abhishek-azure-ai-service001579560527.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview',
+          `${GPT4O_API_URL}`,
           {
             messages: newContext,
             max_tokens: 500,
@@ -152,7 +155,7 @@ const PromptChat = ({ labData }) => {
     try {
       const response = await axios.get(
         // 'http://20.197.53.225:7071/api/get_files_list',
-        'https://business-lab-function.azurewebsites.net/api/get_files_list?code=3ljnnHr99EWbjsmIEEbAvKoE7TGLYuSSXoUu3J9hZILPAzFubaIm_Q%3D%3D'
+        `${BUSINESS_BFA}/api/get_files_list?code=3ljnnHr99EWbjsmIEEbAvKoE7TGLYuSSXoUu3J9hZILPAzFubaIm_Q%3D%3D`
       );
       setFilesList(response.data);
       setLoadingFiles(false);
@@ -168,7 +171,7 @@ const PromptChat = ({ labData }) => {
     try {
       const response = await axios.get(
         // `http://20.197.53.225:7071/api/get_file_context?file=${fileName}`,
-        `https://business-lab-function.azurewebsites.net/api/get_file_context?code=a7zI88sjG-uflCs_PtXcN-jWLjlQBoizpSN-XpRqPjPDAzFuPoBUaw%3D%3D&file=${fileName}`,
+        `${BUSINESS_BFA}/api/get_file_context?code=a7zI88sjG-uflCs_PtXcN-jWLjlQBoizpSN-XpRqPjPDAzFuPoBUaw%3D%3D&file=${fileName}`,
         JSON.stringify({ "file_name": fileName })
       );
       return `The data of file ${fileName} is: ${response.data} in an unstructured format.`;
