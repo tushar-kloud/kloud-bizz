@@ -17,9 +17,6 @@ export const labsDetails = [
       file_upload: true,
       multiple_files: true
     },
-
-    // NEW LABS
-    // https://drive.google.com/file/d/1WdgTSB1KSsbU8zmNj_xwJWpwypS52HIs/view?usp=sharing
     {
       id: 272718,
       title: "Conversion Rate Optimization (CRO) Models",
@@ -92,12 +89,13 @@ export const labsDetails = [
       file_upload: true,
       multiple_files: true
     },
+    // https://drive.google.com/file/d/16E1UlZXFiU7532sp7Oz0nm2TL5w8ne5N/view?usp=sharing
     {
       id: 838572,
-      title: "Digital Marketing Spend ROI Analysis",
-      description: "Analyze the effectiveness of digital marketing expenditures by measuring return on investment, leveraging insights to optimize budget allocations and enhance campaign strategies.",
+      title: "Dynamic Pricing in ECommerece",
+      description: "Explore dynamic pricing strategies to maximize revenue while remaining competitive. Assess market trends and customer behavior to adjust prices in real time, enhancing profitability and customer satisfaction.",
       thumbnailImage: "https://img.freepik.com/premium-photo/ai-cloud-concept-with-brain_23-2149739747.jpg?w=900",
-      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd&embedded=true",
+      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=16E1UlZXFiU7532sp7Oz0nm2TL5w8ne5N&embedded=true",
       file_upload: true,
       multiple_files: true
     }
