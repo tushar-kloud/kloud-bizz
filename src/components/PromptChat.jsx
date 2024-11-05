@@ -113,6 +113,8 @@ const PromptChat = ({ labData }) => {
 
         if (response?.data?.choices?.[0]?.message?.content) {
           const responseMessage = response.data.choices[0].message.content;
+          console.log('response:',responseMessage);
+          
 
           setMessages((prevMessages) => {
             const updatedMessages = [...prevMessages];
