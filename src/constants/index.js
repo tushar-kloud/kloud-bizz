@@ -54,8 +54,6 @@ export const labsDetails = [
       multiple_files: true
     },
     {
-      // https://drive.google.com/file/d/1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd/preview
-      // https://drive.google.com/file/d/1djPLL9yo35Bp1re_7QWxicZqujYSjV8_/preview
       id: 838577,
       title: "Digital Marketing Spend ROI Analysis",
       description: "Analyze the effectiveness of digital marketing expenditures by measuring return on investment, leveraging insights to optimize budget allocations and enhance campaign strategies.",
@@ -99,6 +97,15 @@ export const labsDetails = [
       doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=16E1UlZXFiU7532sp7Oz0nm2TL5w8ne5N&embedded=true",
       file_upload: true,
       multiple_files: true
-    }
+    },
+    {
+      id: 848173,
+      title: "Document/Data classification, entity recognition, analysis and summarization",
+      description: "focus on document and data classification, entity recognition, and summarization techniques. Gain hands-on experience analyzing and extracting key insights from text, essential for AI-driven content and data management.",
+      thumbnailImage: "https://img.freepik.com/free-photo/gradient-ai-cloud-with-broken-pieces_23-2149739757.jpg?t=st=1730102512~exp=1730106112~hmac=2de3fa800e635f50d3c52525b08dace619bed90fe92ca58a71f4d5770d6309d0&w=900",
+      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1nzEebl5GCkYFUFdkWrCFoeOhf9KI6Xt_&embedded=true",
+      file_upload: true,
+      multiple_files: true
+    },
   ];
   
