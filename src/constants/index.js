@@ -55,11 +55,12 @@ export const labsDetails = [
     },
     {
       // https://drive.google.com/file/d/1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd/preview
-      id: 838572,
+      // https://drive.google.com/file/d/1djPLL9yo35Bp1re_7QWxicZqujYSjV8_/preview
+      id: 838577,
       title: "Digital Marketing Spend ROI Analysis",
       description: "Analyze the effectiveness of digital marketing expenditures by measuring return on investment, leveraging insights to optimize budget allocations and enhance campaign strategies.",
       thumbnailImage: "https://img.freepik.com/free-photo/ai-cloud-with-robot-head_23-2149739759.jpg?t=st=1730102552~exp=1730106152~hmac=81e0bbbc35a19f58460730e2d8475e51d05d3ce949d685b57a8ae77175a7154b&w=900",
-      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd&embedded=true",
+      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1djPLL9yo35Bp1re_7QWxicZqujYSjV8_&embedded=true",
       file_upload: true,
       multiple_files: true
     },
