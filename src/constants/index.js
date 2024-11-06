@@ -54,11 +54,11 @@ export const labsDetails = [
       multiple_files: true
     },
     {
+      // https://drive.google.com/file/d/1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd/preview
       id: 838572,
       title: "Digital Marketing Spend ROI Analysis",
       description: "Analyze the effectiveness of digital marketing expenditures by measuring return on investment, leveraging insights to optimize budget allocations and enhance campaign strategies.",
       thumbnailImage: "https://img.freepik.com/free-photo/ai-cloud-with-robot-head_23-2149739759.jpg?t=st=1730102552~exp=1730106152~hmac=81e0bbbc35a19f58460730e2d8475e51d05d3ce949d685b57a8ae77175a7154b&w=900",
-      // https://drive.google.com/file/d/1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd/view?usp=sharing
       doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd&embedded=true",
       file_upload: true,
       multiple_files: true
@@ -90,10 +90,9 @@ export const labsDetails = [
       file_upload: true,
       multiple_files: true
     },
-    // https://drive.google.com/file/d/16E1UlZXFiU7532sp7Oz0nm2TL5w8ne5N/view?usp=sharing
     {
       id: 838572,
-      title: "Dynamic Pricing in ECommerece",
+      title: "Dynamic Pricing in E-Commerece",
       description: "Explore dynamic pricing strategies to maximize revenue while remaining competitive. Assess market trends and customer behavior to adjust prices in real time, enhancing profitability and customer satisfaction.",
       thumbnailImage: "https://img.freepik.com/premium-photo/ai-cloud-concept-with-brain_23-2149739747.jpg?w=900",
       doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=16E1UlZXFiU7532sp7Oz0nm2TL5w8ne5N&embedded=true",
