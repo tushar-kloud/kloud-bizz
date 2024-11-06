@@ -58,6 +58,7 @@ export const labsDetails = [
       title: "Digital Marketing Spend ROI Analysis",
       description: "Analyze the effectiveness of digital marketing expenditures by measuring return on investment, leveraging insights to optimize budget allocations and enhance campaign strategies.",
       thumbnailImage: "https://img.freepik.com/free-photo/ai-cloud-with-robot-head_23-2149739759.jpg?t=st=1730102552~exp=1730106152~hmac=81e0bbbc35a19f58460730e2d8475e51d05d3ce949d685b57a8ae77175a7154b&w=900",
+      // https://drive.google.com/file/d/1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd/view?usp=sharing
       doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1NuXZbgVjG4aTbo-v9xtbCURFiU9tnbgd&embedded=true",
       file_upload: true,
       multiple_files: true
@@ -73,7 +74,7 @@ export const labsDetails = [
     },
     {
       id: 629173,
-      title: "Profile Margin Analysis of Ecommerce",
+      title: "Profit Margin Analysis of Ecommerce",
       description: "Examine the margins across product profiles to identify profitability patterns, enabling better pricing strategies and inventory management.",
       thumbnailImage: "https://img.freepik.com/premium-photo/ai-cloud-concept-with-gradient-cube_23-2149739746.jpg?w=900",
       doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1wfJFphgYpqsre-_scCVttGeggluWzS0r&embedded=true",
@@ -82,7 +83,7 @@ export const labsDetails = [
     },
     {
       id: 869283,
-      title: "Shipping Cost Optimization for Ecommerce",
+      title: "Shipping Cost Optimization for E-commerce",
       description: "Evaluate shipping strategies to reduce costs while maintaining service quality, optimizing logistics for enhanced customer satisfaction.",
       thumbnailImage: "https://img.freepik.com/free-photo/ai-cloud-concept-with-robot-arms_23-2149739749.jpg?t=st=1725183402~exp=1725187002~hmac=fcb69b9ff34819d7ff3b73f24eb5b9d9f0afb4c3b0da447aacd6f2040aa654bd&w=900",
       doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1l_gxtNEx_QjKlKsKKE8ipCn0eBTdhKfV&embedded=true",
