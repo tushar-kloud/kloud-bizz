@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   TextField,
@@ -18,7 +18,6 @@ import {
   Divider,
   CircularProgress,
   Alert,
-  fabClasses,
 } from "@mui/material";
 import axios from "axios";
 import MessageBubble from "./MessageBubble";
@@ -39,6 +38,12 @@ const PromptChat = ({ labData }) => {
   const [loadingFiles, setLoadingFiles] = useState(false);
   const [fileLoadError, setFileLoadError] = useState(null);
   const [multipleFilesAllowed] = useState(labData.multiple_files || false);
+  const [loadingContext, setLoadingContext] = useState(false); 
+  const chatEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleSendMessage = async () => {
     if (messageInput.trim() || selectedFiles.length > 0) {
@@ -60,6 +65,7 @@ const PromptChat = ({ labData }) => {
       }
 
       if (selectedFiles.length > 0) {
+        setLoadingContext(true); // Show loading indicator
         for (let i = 0; i < selectedFiles.length; i++) {
           const fileName = selectedFiles[i];
           const fileContext = await getGeneratedContext(fileName);
@@ -82,6 +88,7 @@ const PromptChat = ({ labData }) => {
 
           setSelectedFiles([]); // Clear selected files after processing
         }
+        setLoadingContext(false); // Hide loading indicator
       }
 
       newMessages = [...newMessages, { text: messageInput, sender: "user", loading: false }];
@@ -113,9 +120,8 @@ const PromptChat = ({ labData }) => {
 
         if (response?.data?.choices?.[0]?.message?.content) {
           const responseMessage = response.data.choices[0].message.content;
-          console.log('response:',responseMessage);
+          // console.log('response:',responseMessage);
           
-
           setMessages((prevMessages) => {
             const updatedMessages = [...prevMessages];
             updatedMessages[updatedMessages.length - 1] = {
@@ -170,16 +176,33 @@ const PromptChat = ({ labData }) => {
 
 
   const getGeneratedContext = async (fileName) => {
-    try {
-      const response = await axios.get(
-        // `http://20.197.53.225:7071/api/get_file_context?file=${fileName}`,
-        `${BUSINESS_BFA}/api/get_file_context?code=a7zI88sjG-uflCs_PtXcN-jWLjlQBoizpSN-XpRqPjPDAzFuPoBUaw%3D%3D&file=${fileName}`,
-        JSON.stringify({ "file_name": fileName })
-      );
-      return `The data of file ${fileName} is: ${response.data} in an unstructured format.`;
-    } catch (error) {
-      console.error("Error fetching file context:", error);
-    }
+    setLoadingContext(true); // Start loading indicator
+  try {
+    const response = await axios.get(
+      // Your API endpoint here
+      `${BUSINESS_BFA}/api/get_file_context?code=a7zI88sjG-uflCs_PtXcN-jWLjlQBoizpSN-XpRqPjPDAzFuPoBUaw%3D%3D&file=${fileName}`,
+      { params: { file_name: fileName } }
+    );
+    setLoadingContext(false); // Stop loading indicator once the API call is done
+    return `The data of file ${fileName} is: ${response.data}`;
+  } catch (error) {
+    console.error("Error fetching file context:", error);
+    setLoadingContext(false); // Stop loading indicator in case of error
+
+    // Add error message to the chat
+    const errorMessage = {
+      text: "Something went wrong while analyzing the asset. Please try again.",
+      sender: "received",
+      loading: false,
+      error: true,
+    };
+
+    setMessages((prevMessages) => {
+      const updatedMessages = [...prevMessages];
+      updatedMessages[updatedMessages.length - 1] = errorMessage;
+      return updatedMessages;
+    });
+  }
   };
 
   const handleKeyDown = (e) => {
@@ -216,7 +239,8 @@ const PromptChat = ({ labData }) => {
     if (openDialog) {
       fetchFiles();
     }
-  }, [openDialog]);
+    scrollToBottom()
+  }, [openDialog,messages]);
 
   return (
     <Paper
@@ -263,8 +287,13 @@ const PromptChat = ({ labData }) => {
             <MessageBubble key={index} message={msg} />
           ))
         )}
+        {loadingContext && (
+        <Box display="flex" justifyContent="center" alignItems="center" mt={10}>
+          <CircularProgress />
+          <Typography sx={{ ml: 2 }}>Analysing the attached asset.</Typography>
+        </Box>
+        )}
       </Box>
-
       <Box
         sx={{
           display: "flex",
@@ -364,6 +393,7 @@ const PromptChat = ({ labData }) => {
           variant="outlined"
           fullWidth
           placeholder="Type a message..."
+          disabled={loadingContext}
           value={messageInput}
           onChange={(e) => setMessageInput(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -381,6 +411,7 @@ const PromptChat = ({ labData }) => {
 
         <IconButton
           onClick={handleSendMessage}
+          disabled={loadingContext}
           sx={{
             "@media (max-width: 600px)": { marginLeft: "0px" },
           }}
