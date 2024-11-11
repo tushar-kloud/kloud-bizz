@@ -28,7 +28,7 @@ jobs:
             CI: false
             VITE_GPT4O_API_URL: ${{secrets.VITE_GPT4O_API_URL}}
             VITE_GPT4O_API_KEY: ${{secrets.VITE_GPT4O_API_KEY}}
-            VITE_BUSINESS_BFA: ${{secrets.VITE_BUSINESS_BFA}}
+            VITE_BUSINESS_BFA: ${{secrets.VITE_BUSINESS_BFA_CONTAINERAPP}}
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
