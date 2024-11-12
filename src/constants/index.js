@@ -107,5 +107,14 @@ export const labsDetails = [
       file_upload: true,
       multiple_files: true
     },
+    {
+      id:827135,
+      title: "Audio & Speech Analysis with LLMs/AL",
+      description: "This lab explores the integration of Large Language Models (LLMs) and AI in analyzing audio and speech data, focusing on transcription, sentiment analysis, speaker identification, and real-time processing.",
+      thumbnailImage: "https://img.freepik.com/free-vector/colorful-soundwave-wallpaper_23-2148430972.jpg?t=st=1731400690~exp=1731404290~hmac=c5b6b3bc4f9c3c44ee639f702eccf17fc1c5574c59c2e5487876ae51c870ada5&w=996",
+      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1KeKeMfQMqhh_2VDcHzy0pVd87OVv9PIg&embedded=true",
+      file_upload: true,
+      multiple_files: true
+    }
   ];
   
