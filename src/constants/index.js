@@ -115,6 +115,24 @@ export const labsDetails = [
       doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1KeKeMfQMqhh_2VDcHzy0pVd87OVv9PIg&embedded=true",
       file_upload: true,
       multiple_files: true
+    },
+    {
+      id: 473911,
+      title: "Image Processing Lab 1: Electronic Purchase Analysis",
+      description: "This lab focuses on using image processing techniques to analyze and interpret electronic purchase data. It involves techniques like OCR (Optical Character Recognition) to extract information from receipts and invoices, and applying AI to predict purchasing behavior.",
+      thumbnailImage: "https://img.freepik.com/free-photo/high-angle-laptop-hard-drive-arrangement_23-2149417022.jpg?t=st=1731661446~exp=1731665046~hmac=747f8c4fc5748c7085b464dc9a26d31dc3cac323c52eab140cba9f656f96ef29&w=996",
+      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1FHPkQTTpf2KzXUs9Id-fZ6U1a8IyLp4I&embedded=true",
+      file_upload: true,
+      multiple_files: true
+    },
+    {
+      id: 482042,
+      title: "Image Processing Lab 2: Marketing Consulting Invoice Spreadsheet",
+      description: "This lab focuses on analyzing marketing consulting invoices using image processing and machine learning techniques. The task includes extracting key data points from invoices and creating insights based on the patterns and trends of the financial documents.",
+      thumbnailImage: "https://img.freepik.com/free-photo/map-lying-wooden-table_53876-105723.jpg?t=st=1731661563~exp=1731665163~hmac=0a14cf8846fc1a0867980bd0964aab521f56f2e6ed22c2850ded1f29d896ee3a&w=1060",
+      doc_url: "https://drive.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1NM-VrL-dSYn_BoltV-aTsJc9SPM3LNOR&embedded=true",
+      file_upload: true,
+      multiple_files: true
     }
   ];
   
